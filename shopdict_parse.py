@@ -16,7 +16,7 @@ shop_dict= {"Target": ["socks", "soap", "detergent", "sponges"], "Safeway": ["bu
 
 def menu_prompt():
     # todo: display menu and get choice using raw_input from user.
-    prompt = int(raw_input("0 - Main Menu\n1 - Show all lists.\n2 - Show a specific list. \n3 - Add a new shopping list.\n4 - Add an item to a shopping list.\n5 - Remove an item from a shopping list.\n6 - Remove a list by nickname.\n7 - Exit when you are done.\n"))
+    prompt = int(raw_input("0 - Main Menu\n1 - Show all lists.\n2 - Show a specific list. \n3 - Add a new shopping list.\n4 - Add an item to a shopping list.\n5 - Remove an item from a shopping list.\n6 - Remove a list by nickname.\n7 - Add multiple items to a list.\n9 - Exit when you are done.\n"))
     return prompt
 
 
@@ -27,10 +27,12 @@ def show_all_lists():
 
 
 def show_sorted_list(key):
-    # todo:
-    print sorted(shop_dict[key])
+    # todo: check if key is in dictionary, then print sorted list value
+    if key in shop_dict: 
+        print sorted(shop_dict[key])
+    else:
+        print "There is no list for that store.  Check your spelling or select option 3 to add a new one!"
     
-
 
 def add_new_list(key):
     # add a new list with key as name of the list
@@ -62,11 +64,7 @@ def add_item_to_list(key, item):
     	print "You already have this item on your list for %s." % (key)
     else:
     	shop_dict[key] = shop_dict[key] + [item]
-	return show_sorted_list(shop_dict[key])
-   
-   
-
-
+	return (shop_dict[key])
     
     # deal with uppercase/lowercase
     
@@ -88,27 +86,24 @@ def main():
     prompt = menu_prompt()
     if prompt == 1:
         print show_all_lists()
-        print "\n"
-        menu_prompt()
+
  #if option 2 entered   
-    elif prompt == 2:
+    if prompt == 2:
         key_name = raw_input("Which store list do you want? ")
         show_sorted_list(key_name)
-        print "\n"
-        menu_prompt()
+        
  # if option 3 entered
     elif prompt == 3:
         new_key = raw_input("What store do you want to add a shopping list for? ")
         add_new_list(new_key)
-        print "\n"
-        menu_prompt()
+        
  # if option 4 entered
     elif prompt == 4:
         key_name4 = raw_input("What store list do you want to add your item to? ")
         add_item = raw_input("What item do you want to add? ")
         add_item_to_list(key_name4,add_item)
-        print "\n"
-        menu_prompt()    
+        show_sorted_list (key_name4)
+         
 # testing adding multiple parsed items   
     else:
         add_mult_items = raw_input("Which items do you want to add? (Use a comma to separate) ")
