@@ -8,7 +8,7 @@ class Contact(object):
 	
 	def text(self, message): 
 		if self.mobile_number is "": 
-			return "no mobile number exists" 
+			return "No mobile number exists" 
 		else:  
 			return "To: %s - %s" % (self.mobile_number,message)
 
