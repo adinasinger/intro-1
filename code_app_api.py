@@ -1,5 +1,6 @@
 from urllib2 import urlopen
 from json import load
+from Movie_class import *
 
 apiURL = "https://data.sfgov.org/resource/wwmu-gmzc.json?"
 
@@ -17,8 +18,17 @@ for i in json_obj:
 	for item in i:
 		if i[item] == "2002":
 			if i["title"] not in film_list:
-				film_list.append(i["title"])
+#				film_list.append(i["title"])
+				director = (i["director"])
+				release_year = (i["release_year"])
+				
+				
+print director
 
-for film in film_list:
-	print film
+# for film in film_list:
+# 	print film
 
+#for each film in JSON,
+# MovieInfo(director, release_year, title, actor_1, actor_2, location)
+
+#film_title = MovieInfo(director, release_year, title, actor_1, actor_2, location)
