@@ -33,19 +33,23 @@ names_list = ['Steven', 'Michael', 'James']
 # for i in range(len(names_list)):
 # 	print names_list[i] + names_list[i+(len(names_list)-1)]
 # 	print names_list[i] + names_list
-for name in names_list[0:]:
-	for i in range(len(names_list)):
+# for name in names_list[0:]:
+# 	for i in range(len(names_list)):
 		
-		if i = 0:
-			print names_list[i] + names_list[i+1]
-			print names_list[i] + names_list[i+2]
+# 		if i = 0:
+# 			print names_list[i] + names_list[i+1]
+# 			print names_list[i] + names_list[i+2]
 
 			
 
-
-
 for name in names_list:
-	print name 
+#	for name in names_list:
+
+	while True:
+		for name in names_list:
+			print name + "" + name
+		break
+
 
 names_list[0] + names_list[1]
 names_list[0] + names_list[2]

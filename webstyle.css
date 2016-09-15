@@ -1,0 +1,19 @@
+div {
+    border-radius: 15px;
+    border: 112px solid #6495ED;
+    background-color: #BCD2EE;
+    height: 150px;
+    width: 1120px;
+    margin: auto;
+    text-align: center;
+} 
+span {
+    font-weight: bold;
+    font-size: 18px
+    color: #ffffff
+}
+a {
+    text-decoration: none;
+    color: #3D59AB;
+    font-family: Verdana, sans-serif;
+}
